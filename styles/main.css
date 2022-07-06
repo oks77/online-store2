@@ -1,0 +1,53 @@
+@import "style.min.css";
+@import "side-bar.css";
+@import "cart.css";
+@import "search.css";
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.bottom-part {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: flex-end;
+}
+.central-part {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 10px;
+}
+.card-list {
+  display: flex;
+  flex-direction: row;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1320px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+
+.online-store-name {
+  color: #7e72f2;
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 600;
+}

@@ -1,0 +1,143 @@
+/* put your styles in this file */
+html {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  margin: 0px;
+  padding: 0px;
+}
+
+.logo-text {
+  color: #7e72f2;
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-family: Montserrat, sans-serif;
+}
+
+.side-bar {
+  width: 280px;
+  height: 875px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+button {
+  border-width: 0;
+}
+
+.button-filters {
+  width: 280px;
+  height: 46px;
+  margin-top: 20px;
+  margin-bottom: 507px;
+  margin-left: 75px;
+  border-radius: 8px;
+
+  background: #7e72f2;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.clear-all-filters {
+  color: #fff;
+}
+
+.category-styles {
+  margin: 25px 218px 15px 13px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: Montserrat, sans-serif;
+}
+
+.name-category {
+  font-family: Montserrat, sans-serif;
+  color: #2c2c2c;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.price-container {
+  padding-top: 2px;
+}
+
+.all-category {
+  margin-left: 8px;
+}
+
+.box-form {
+  border-radius: 3px;
+  height: 17px;
+  width: 20px;
+}
+
+.range-slider {
+  font-size: 14px;
+  font-family: Montserrat, sans-serif;
+  box-sizing: border-box;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+/*.range-slider {*/
+/*  font-size: 14px;*/
+/*  font-family: Montserrat, sans-serif;*/
+/*  box-sizing: border-box;*/
+/*  background-color: #7e72f2;*/
+/*  box-shadow: 0 0 1px #7e72f2;*/
+/*  display: inline-block;*/
+/*  height: 4px;*/
+/*  margin: 10px 14px;*/
+/*  position: relative;*/
+/*  user-select: none;*/
+/*  width: 87%;*/
+/*}*/
+
+.range-slider__thumb-right {
+  margin-right: -6px;
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.range-slider__thumb-left,
+.range-slider__thumb-right {
+  background: url(https://online-store.bootcamp.place/range-thumb-icon.a4dd7a38.svg)
+    0 no-repeat;
+  background-size: cover;
+  cursor: grab;
+  height: 18px;
+  margin-top: -9px;
+  position: absolute;
+  top: 50%;
+  width: 6px;
+}
+
+.range-slider > span {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 100%;
+}
+
+.range-slider > span:last-child {
+  right: 0;
+}
+
+.line-solid {
+  width: 87%;
+  margin-left: 7%;
+  margin-top: 30px;
+  border-bottom: 1px solid #d6d6d6;
+}
