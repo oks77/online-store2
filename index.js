@@ -8,10 +8,12 @@ export default class OnlineStorePage {
   constructor() {
     this.pageSize = 9;
     this.products = [];
+    this.cartProducts = [];
     this.components = {};
     this.url = new URL(`https://online-store.bootcamp.place/api/products`);
     this.url.searchParams.set("_limit", this.pageSize);
     this.getProducts(0).then((res) => {
+      this.products = res;
       this.initComponents(res);
       this.render();
       this.renderComponents();
@@ -20,6 +22,7 @@ export default class OnlineStorePage {
       this.checkedOneItem();
       this.searchName();
       this.showCart();
+      this.addToCartInit();
     });
   }
 
@@ -130,6 +133,7 @@ export default class OnlineStorePage {
         // const end = start + this.pageSize;
         //const data = this.products.slice(start, end);
         this.getProducts(pageIndex).then((data) => {
+          this.products = data;
           this.components.cardList.update(data);
         });
       }
@@ -154,6 +158,7 @@ export default class OnlineStorePage {
         }
 
         this.getCategories().then((data) => {
+          this.products = data;
           this.components.cardList.update(data);
         });
       });
@@ -175,9 +180,23 @@ export default class OnlineStorePage {
         }
 
         this.getCategories().then((data) => {
+          this.products = data;
           this.components.cardList.update(data);
           console.log(data);
         });
+      });
+    }
+  }
+
+  addToCartInit() {
+    const buttonCollection = document.getElementsByClassName("addToCartButton");
+    for (let item of buttonCollection) {
+      item.addEventListener("click", (e) => {
+        const item = this.products.find(
+          (value) => value.id === e.target.dataset.id
+        );
+        this.cartProducts.push(item);
+        console.log(this.cartProducts);
       });
     }
   }
@@ -187,10 +206,14 @@ export default class OnlineStorePage {
     const modal = document.getElementById("modal");
     const closeCart = document.getElementById("close-button");
     buttonCart.addEventListener("click", (e) => {
-      modal.style.cssText = "display: flex";
+      if (this.cartProducts.length) {
+        modal.style.cssText = "display: flex";
+        this.components.cart.update(this.cartProducts);
+      }
     });
     closeCart.addEventListener("click", (e) => {
       modal.style.cssText = "display: none";
+      this.components.cart.update([]);
     });
   }
 }

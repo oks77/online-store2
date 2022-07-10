@@ -24,7 +24,7 @@ export default class Card {
         </div>
 
         <footer class="os-product-footer">
-          <button class="os-btn-primary" data-element="addToCartBtn">
+          <button class="os-btn-primary addToCartButton" data-element="addToCartBtn" data-id="${this.state.id}">
             Add To Cart
           </button>
         </footer>
@@ -32,11 +32,6 @@ export default class Card {
     `;
 
     return result;
-  }
-
-  update(data = {}) {
-    this.state = data;
-    this.componentElement.innerHTML = this.getTemplate();
   }
 
   myRender() {
